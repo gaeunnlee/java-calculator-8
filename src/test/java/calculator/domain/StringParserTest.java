@@ -67,4 +67,15 @@ class StringParserTest {
             StringParser.parse(str, "");
         });
     }
+
+    @Test
+    public void parseWithZero() {
+        // given
+        String str = "1,0,3";
+
+        // when & then
+        assertThrows(IllegalArgumentException.class, () -> {
+            StringParser.parse(str, "");
+        });
+    }
 }

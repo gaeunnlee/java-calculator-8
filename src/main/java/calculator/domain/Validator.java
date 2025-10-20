@@ -8,8 +8,8 @@ public class Validator {
 
         int number = Integer.parseInt(token);
 
-        if (number < 0) {
-            throw new IllegalArgumentException("잘못된 입력입니다: 음수 '" + number + "' 는 허용되지 않습니다.");
+        if (number <= 0) {
+            throw new IllegalArgumentException("잘못된 입력입니다: '" + number + "' 는 양수가 아닙니다");
         }
     }
 }
