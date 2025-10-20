@@ -19,7 +19,10 @@ public class StringParser {
         return Arrays.stream(tokens)
                 .map(String::trim)
                 .filter(s -> !s.isEmpty())
-                .mapToInt(Integer::parseInt)
+                .mapToInt(token -> {
+                    Validator.validateNumber(token);
+                    return Integer.parseInt(token);
+                })
                 .toArray();
     }
 }

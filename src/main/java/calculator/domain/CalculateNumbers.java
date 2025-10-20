@@ -8,9 +8,6 @@ public class CalculateNumbers {
 
         int sum = 0;
         for (int number : numbers) {
-            if (number < 0) {
-                throw new IllegalArgumentException();
-            }
             sum += number;
         }
         return sum;
