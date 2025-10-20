@@ -46,4 +46,25 @@ class StringParserTest {
         Assertions.assertThat(result.length).isEqualTo(0);
     }
 
+    @Test
+    public void parseInvalidCharacter() throws Exception {
+        // given
+        String str = "123;4";
+
+        // when & then
+        assertThrows(IllegalArgumentException.class, () -> {
+            StringParser.parse(str, "");
+        });
+    }
+
+    @Test
+    public void parseWithNegativeNumber() {
+        // given
+        String str = "1,-2,3";
+
+        // when & then
+        assertThrows(IllegalArgumentException.class, () -> {
+            StringParser.parse(str, "");
+        });
+    }
 }
